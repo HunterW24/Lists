@@ -3,12 +3,11 @@ using System.Collections.Generic;
 
 namespace Lists_Wixson_hunter
 {
-
-
     class Program
     {
         static void Main(string[] args)
         {
+            // Create a list of games
             List<string> games = new List<string>
             {
                 "CS:GO",
@@ -18,69 +17,82 @@ namespace Lists_Wixson_hunter
                 "Minecraft"
             };
 
+            // Create an array of other games
             string[] otherGames = new string[]
             {
                 "Tiny Tina's Wonderland",
-                "Farcry 3",
+                "Farcry 3"
             };
 
+            // Print the initial list of games
+            Console.WriteLine("Initial games list:");
             foreach (string game in games)
             {
                 Console.WriteLine(game);
             }
 
-            Console.WriteLine($"\nGames in list: {games.Count}");
-
+            // Add the other games to the list
             games.AddRange(otherGames);
 
-            Console.WriteLine($"\nGames in list: {games.Count}");
+            // Print the updated list of games
+            Console.WriteLine("\nUpdated games list:");
+            foreach (string game in games)
+            {
+                Console.WriteLine(game);
+            }
 
-            if (games.Contains("Halo")) 
+            // Check if "Halo" is in the list
+            if (games.Contains("Halo"))
             {
                 Console.WriteLine("\nMASTER CHEIF IS IN THE HOUSE!!");
             }
             else
             {
+                // Add "Halo" if it's not found
                 games.Add("Halo");
             }
 
+            // Remove a game at a specific index
             int myInt = 6;
-
-            if(myInt < games.Count)
+            if (myInt < games.Count)
             {
                 games.RemoveAt(myInt);
-            } 
+            }
             else
             {
                 Console.WriteLine("\nGame not found!");
             }
 
-            Console.WriteLine("\nAll games in the list");
+            // Print the updated list
+            Console.WriteLine("\nAll games in the list:");
             foreach (string game in games)
             {
                 Console.WriteLine(game);
             }
 
+            // Sort the list
             games.Sort();
 
-            Console.WriteLine("\nSorted games list");
+            // Print the sorted list
+            Console.WriteLine("\nSorted games list:");
             foreach (string game in games)
             {
                 Console.WriteLine(game);
             }
 
+            // Copy the list to an array
             string[] newList = new string[games.Count];
-
             games.CopyTo(newList);
 
+            // Clear the original list
             games.Clear();
 
-            Console.WriteLine("\nNew List");
+            // Print the new array
+            Console.WriteLine("\nNew List:");
             foreach (string game in newList)
             {
                 Console.WriteLine(game);
             }
-
         }
     }
 }
